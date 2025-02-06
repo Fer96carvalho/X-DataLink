@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# X-DataLink
 
-## Getting Started
+## Descrição
+O **X-DataLink** é um sistema distribuído para armazenamento e compartilhamento de arquivos. Ele permite que os usuários realizem upload, download e compartilhem arquivos de forma segura e escalável. A autenticação é feita via Google OAuth 2.0, garantindo facilidade de acesso.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Front-end:
+- **Framework**: Next.js
+- **Autenticação**: OAuth 2.0 com Google
+- **Interface responsiva**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Back-end:
+- **Linguagem**: Node.js
+- **Framework**: Express
+- **Banco de Dados**: PostgreSQL com Supabase
+- **Armazenamento de Arquivos**: Supabase Bucket ou armazenamento local
+- **Mensageria**: RabbitMQ para processamento assíncrono
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Funcionalidades
+- Autenticação social via Google
+- Upload e download de arquivos
+- Compartilhamento de arquivos com controle de permissões
+- Registro de logs de atividades
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Arquitetura do Sistema
+O sistema segue uma arquitetura distribuída composta pelos seguintes componentes:
+- **Frontend**: Interface web desenvolvida em Next.js
+- **Backend**: API REST em Node.js com Express
+- **Banco de Dados**: PostgreSQL gerenciado pelo Supabase
+- **Autenticação**: OAuth 2.0 via Google
+- **Armazenamento**: Supabase ou solução local
+- **Mensageria**: RabbitMQ para processamento assíncrono
 
-## Learn More
+## Requisitos
+- Node.js 18+
+- PostgreSQL
+  
+## Instalação e Execução
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone o repositório:
+   ```sh
+   git clone https://github.com/seu-usuario/x-datalink.git
+   cd x-datalink
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Instale as dependências do backend:
+   ```sh
+   cd backend
+   npm install
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+3. Configure as variáveis de ambiente do backend no arquivo `.env`:
+   ```env
+   SecretKey=
+   NameAdmin=
+   EmailAdmin=
+   PasswordAdmin=
+   ServerPort=
+   SUPABASE_URL=
+   SUPABASE_SERVICE_ROLE_KEY=
+   GoogleID=
+   GoogleKey=
+  
+   ```
 
-## Deploy on Vercel
+4. Execute o backend:
+   ```sh
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+5. Instale as dependências do frontend:
+   ```sh
+   cd ../frontend
+   npm install
+   ```
+7. Configure as variáveis de ambiente do frontend no arquivo `.env`:
+   ```env
+   GOOGLE_CLIENT_ID=
+   GOOGLE_CLIENT_SECRET=
+   NEXTAUTH_SECRET=
+   API_URL=
+  
+   ```
+6. Execute o frontend:
+   ```sh
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Contribuição
+Sinta-se à vontade para abrir issues e pull requests para melhorias no projeto.
+
+## Licença
+Este projeto está sob a licença MIT.
+
