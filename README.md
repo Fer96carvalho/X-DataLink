@@ -15,7 +15,7 @@ O **X-DataLink** é um sistema distribuído para armazenamento e compartilhament
 - **Framework**: Express
 - **Banco de Dados**: PostgreSQL com Supabase
 - **Armazenamento de Arquivos**: Supabase Bucket ou armazenamento local
-- **Mensageria**: RabbitMQ para processamento assíncrono
+
 
 ## Funcionalidades
 - Autenticação social via Google
@@ -29,12 +29,12 @@ O sistema segue uma arquitetura distribuída composta pelos seguintes componente
 - **Backend**: API REST em Node.js com Express
 - **Banco de Dados**: PostgreSQL gerenciado pelo Supabase
 - **Autenticação**: OAuth 2.0 via Google
-- **Armazenamento**: Supabase ou solução local
-- **Mensageria**: RabbitMQ para processamento assíncrono
+- **Armazenamento**: Supabase Bucket
+
 
 ## Requisitos
 - Node.js 18+
-- PostgreSQL
+  
   
 ## Instalação e Execução
 
