@@ -79,7 +79,7 @@ O sistema segue uma arquitetura distribuída composta pelos seguintes componente
    GOOGLE_CLIENT_ID=
    GOOGLE_CLIENT_SECRET=
    NEXTAUTH_SECRET=
-   API_URL=
+   NEXT_PUBLIC_API_URL=
   
    ```
 6. Execute o frontend:
