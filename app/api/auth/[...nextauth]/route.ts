@@ -1,7 +1,6 @@
-import { cn } from "@/app/_lib/utils";
+
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-
 
 export const authOptions = {
     secret: process.env.NEXTAUTH_SECRET,
@@ -9,7 +8,12 @@ export const authOptions = {
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID ?? "",
             clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
-        })
+            authorization: {
+                params: {
+                    prompt: "select_account",
+                },
+            },
+        }),
     ],
     callbacks: {
         async signIn({ user, account }) {
@@ -23,15 +27,13 @@ export const authOptions = {
             }
             return token;
         },
-        async session({ session, token}){
+        async session({ session, token }) {
             session.user.accessToken = token.accessToken;
             session.user.idToken = token.idToken;
             return session;
-        }
-    }
+        },
+    },
 };
-
-
 
 const handler = NextAuth(authOptions);
 
